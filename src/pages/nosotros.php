@@ -1,13 +1,12 @@
-
 <?php
-   require "./includes/funciones.php";
+   require "../../includes/funciones.php";
    incluirTemplate('header');
 ?>
 
     <main>
       <h1 class="text-center my-10 text-4xl">Conoce Sobre Nosotros</h1>
-      <div class="grid grid-cols-2 px-40">
-        <div class="flex justify-center">
+      <div class="grid grid-cols-1 xl:grid-cols-2 px-40">
+        <div class="flex justify-center ">
           <picture>
             <source srcset="../../build/img/nosotros.jpg" type="image/jpeg" />
             <source srcset="../../build/img/nosotros.webp" type="image/webp" />
@@ -19,7 +18,7 @@
           </picture>
         </div>
 
-        <div class="max-w-[500px] flex flex-col gap-8">
+        <div class="max-w-full xl:max-w-[500px] flex flex-col gap-8 ms-4">
           <blockquote class="text-2xl font-bold">
             25 Años de experiencia
           </blockquote>
@@ -101,8 +100,7 @@
     </main>
 
     <?php
-    require "./includes/funciones.php";
-    incluirTemplate('footer');
+      incluirTemplate('footer');
     ?>
    
   </body>

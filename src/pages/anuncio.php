@@ -1,6 +1,6 @@
 
 <?php
-   require "./includes/funciones.php";
+   require "../../includes/funciones.php";
    incluirTemplate('header');
 ?>
     <main class="flex flex-col items-center justify-center">
@@ -82,8 +82,7 @@
     </main>
 
     <?php
-    require "./includes/funciones.php";
-    incluirTemplate('footer');
+    incluirTemplate('footer')
     ?>
   
   </body>

@@ -1,59 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./build/output.css" />
-    <title>Bienes Raices</title>
-  </head>
-  <body>
-    <header
-      class="pt-4 pb-12 bg-[url(./img/header.jpg)] bg-cover bg-no-repeat bg-bottom min-h-[25rem] sm:min-h-[35rem]"
-    >
-      <div class="flex flex-col justify-between min-h-[25rem] sm:min-h-[35rem]">
-        <div class="flex sm:flex-row flex-col justify-around items-center mb-5">
-          <a href="./index.php">
-            <img src="./build/img/logo.svg" class="w-full h-full" alt="" />
-          </a>
-
-          <div class="flex sm:hidden hamburguer">
-            <img
-              src="./build/img/barras.svg"
-              class="w-[5rem] cursor-pointer"
-              alt="menu responsive"
-            />
-          </div>
-
-          <div class="flex flex-col-reverse items-center sm:items-end">
-            <nav
-              class="text-white gap-7 hidden sm:flex-row sm:flex navigation sm:text-[16px] text-2xl"
-            >
-              <a href="./src/pages/nosotros.php" class="hover:text-green-700"
-                >Nosotros</a
-              >
-              <a href="./src/pages/anuncios.php" class="hover:text-green-700"
-                >Anuncios</a
-              >
-              <a href="./src/pages/blog.php" class="hover:text-green-700"
-                >Blog</a
-              >
-              <a href="./src/pages/contacto.php" class="hover:text-green-700"
-                >Contacto</a
-              >
-            </nav>
-            <img
-              src="./build/img/dark-mode.svg"
-              alt="darkmode"
-              class="text-white w-10 my-3 sm:my-0 sm:mb-3 hidden sm:block darkMode invert cursor-pointer"
-            />
-          </div>
-        </div>
-        <h1 class="text-3xl ms-20 max-w-[500px] leading-[3.2rem] text-white">
-          Venta de Casas y Departamentos Exclusivos de Lujo
-        </h1>
-      </div>
-    </header>
-
+<?php
+require "./includes/funciones.php";
+incluirTemplate('header', true);
+?>
     <main class="my-8 px-20 xl:px-40">
       <h1 class="text-4xl text-center mb-10">Más sobre nosotros</h1>
 
@@ -413,20 +361,10 @@
       </section>
     </div>
 
-    <footer class="mt-8 bg-gray-700 p-4 text-white">
-      <div>
-        <nav class="mb-5 gap-10 flex justify-center">
-          <a href="./src/pages/nosotros.php">Nosotros</a>
-          <a href="./src/pages/anuncios.php">Anuncios</a>
-          <a href="./src/pages/blog.php">Blog</a>
-          <a href="./src/pages/contacto.php">Contacto</a>
-        </nav>
-      </div>
-      <p class="text-xl text-center">
-        Todos los derechos reservados 2024 &copy;
-      </p>
-    </footer>
+   <?php
+  incluirTemplate('footer', true)
+?>
 
-    <script src="./build/index.js"></script>
+  
   </body>
 </html>

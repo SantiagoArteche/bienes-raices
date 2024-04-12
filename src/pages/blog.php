@@ -1,6 +1,6 @@
 
 <?php
-   require "./includes/funciones.php";
+   require "../../includes/funciones.php";
    incluirTemplate('header');
 ?>
 
@@ -163,9 +163,7 @@
       </div>
     </main>
     <?php
-    require "./includes/funciones.php";
     incluirTemplate('footer');
     ?>
-   
   </body>
 </html>
