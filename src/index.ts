@@ -1,13 +1,45 @@
-function greeter(person: number): any {
-  return "Hello, " + person;
+document.addEventListener("DOMContentLoaded", (): void => {
+  eventListeners();
+});
+
+const eventListeners = (): void => {
+  const mobileMenu: HTMLElement = document.querySelector(".hamburguer")!;
+
+  mobileMenu.addEventListener("click", responsiveNavigation);
+
+  darkMode();
+};
+
+function responsiveNavigation(): void {
+  const navigation: HTMLElement = document.querySelector(".navigation")!;
+  const darkMode: SVGAElement = document.querySelector(".darkMode")!;
+
+  navigation.classList.toggle("hidden");
+  navigation.classList.add("flex-col");
+  navigation.classList.add("flex");
+  darkMode.classList.toggle("hidden");
 }
 
-let user = "Jane User";
-let blog: number = 3;
+function darkMode(): void {
+  const preferDarkMode = window.matchMedia("(prefers-color-scheme: dark)");
 
-console.log("asd");
-console.log(blog);
-console.log(blog);
-console.log(blog);
-console.log(user);
-console.log("hola que tal");
+  if (preferDarkMode.matches) {
+    document.body.classList.add("dark-mode");
+  } else {
+    document.body.classList.remove("dark-mode");
+  }
+
+  preferDarkMode.addEventListener("change", () => {
+    if (preferDarkMode.matches) {
+      document.body.classList.add("dark-mode");
+    } else {
+      document.body.classList.remove("dark-mode");
+    }
+  });
+
+  const darkModeButton: SVGAElement = document.querySelector(".darkMode")!;
+
+  darkModeButton.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+  });
+}

@@ -7,3 +7,31 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.dark-mode {
+  @apply bg-gray-700 text-white;
+  .casasYDepas {
+    @apply text-black;
+    h2 {
+      @apply text-white;
+    }
+  }
+
+  footer {
+    @apply bg-gray-900;
+  }
+  header {
+    @apply bg-gray-900;
+  }
+  #contactForm fieldset {
+    @apply border-white bg-gray-900;
+
+    select {
+      @apply border-white text-white;
+    }
+  }
+
+  .iconos img {
+    @apply invert;
+  }
+}
