@@ -8,9 +8,9 @@
   </head>
   <body>
     <header class="pt-4 <?php echo $inicio ?  "pb-12 bg-[url(./img/header.jpg)] bg-cover bg-no-repeat bg-bottom min-h-[25rem] sm:min-h-[35rem]" : "bg-slate-700"; ?> ">
-      <div class="flex flex-col justify-between">
+      <div class="flex flex-col justify-between  <?php echo $inicio ? "min-h-[25rem] sm:min-h-[35rem]" : "" ?> ">
         <div class="flex sm:flex-row flex-col justify-around items-center mb-5">
-          <a href=" ../../index.php">
+          <a href="<?php echo $inicio ? "./index.php" : "../../index.php"  ?>">
             <img src= "<?php echo $inicio ? "./build/img/logo.svg": "../../build/img/logo.svg" ; ?>" class="w-full h-full" alt="" />
           </a>
           <div class="flex sm:hidden hamburguer">
@@ -32,7 +32,7 @@
                 >Anuncios</a
               >
               <a href="<?php echo $inicio ? "./src/pages/blog.php": "../../src/pages/blog.php"; ?>" class="hover:text-green-700">Blog</a>
-              <a href="<?php echo $inicio ? "./src/pages/blog.php": "../../src/pages/blog.php"; ?>" class="hover:text-green-700"
+              <a href="<?php echo $inicio ? "./src/pages/contacto.php": "../../src/pages/contacto.php"; ?>" class="hover:text-green-700"
                 >Contacto</a
               >
             </nav>
@@ -46,7 +46,7 @@
 
         <?php
   if ($inicio) {
-    echo "<h1 class=\"text-3xl ms-20 max-w-[500px] leading-[3.2rem] text-white\"> Venta de Casas y Departamentos Exclusivos de Lujo </h1>";
+    echo "<h1 class=\"text-3xl ms-20 sm:ms-30 max-w-[500px] leading-[3.2rem] text-white\"> Venta de Casas y Departamentos Exclusivos de Lujo </h1>";
     }
     ?>
 
