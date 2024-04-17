@@ -1,10 +1,16 @@
 <?php 
 
+require "../../includes/funciones.php";
+
+$auth = userAuthenticated();
+
+ if(!$auth){
+    header('Location: ../index.php');
+ }
+
+
 require "../../includes/config/database.php";
 $db = connectDB();
-
-
-
 
 $errors = [];
 
@@ -91,7 +97,6 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
    
 }
 
-require "../../includes/funciones.php";
 incluirTemplate('header');
 
 

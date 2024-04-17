@@ -1,4 +1,13 @@
 <?php 
+
+require "../../includes/funciones.php";
+
+$auth = userAuthenticated();
+
+if(!$auth){
+    header('Location: ../index.php');
+}
+
 require "../../includes/config/database.php";
 
 $idParam = filter_var($_GET['id'], FILTER_VALIDATE_INT);
@@ -14,7 +23,6 @@ $queryId = "SELECT * FROM estates WHERE id = $idParam;";
 $outcomeProperty = mysqli_query($db, $queryId);
 
 $property = mysqli_fetch_assoc($outcomeProperty);
-
 
 $errors = [];
 
@@ -83,10 +91,11 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
             mkdir($imgFolder);
         }
 
+       
         $imgName = '';
         if($img['name']){
-            unlink($imgFolder . $property['img']);
-
+            unlink($imgFolder . "/" . $property['img']);
+           
             $imgName = md5( uniqid( rand(), true ) ) . ".jpg";
 
             move_uploaded_file($img['tmp_name'], $imgFolder . "/" . $imgName);
@@ -98,7 +107,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
     
 
-    $query = "UPDATE estates SET title = '$title', price = '$price', img = '$img', description = '$description', rooms = $rooms, wc = $wc, parking = $parking, sellers_id = $sellers_id WHERE id = $idParam ;";
+    $query = "UPDATE estates SET title = '$title', price = '$price', img = '$imgName', description = '$description', rooms = $rooms, wc = $wc, parking = $parking, sellers_id = $sellers_id WHERE id = $idParam ;";
 
     $outcome = mysqli_query($db, $query);
 
@@ -111,7 +120,6 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
    
 }
 
-require "../../includes/funciones.php";
 incluirTemplate('header');
 
 
@@ -119,9 +127,6 @@ incluirTemplate('header');
 
 <main class="flex flex-col gap-5 items-center">
     <h1 class="text-6xl my-5">Actualizar Propiedad</h1>
- 
-
-
 
     <div class="flex flex-col gap-5">
 <?php    

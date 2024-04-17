@@ -1,5 +1,12 @@
 <?php 
 require "../includes/funciones.php";
+
+$auth = userAuthenticated();
+
+if(!$auth){
+    header('Location: ./index.php');
+}
+
 incluirTemplate('header', false, true);
 
 $mensaje = $_GET['resultado'] ?? null;
@@ -72,13 +79,12 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
     <?php while($row = mysqli_fetch_assoc($outcome)) : ?>
 
-        <tr>
+        <tr class="flex-1 text-center h-full">
             <td><?php echo $row['id']; ?></td>
             <td><?php echo $row['title']; ?></td>
-            <td><img src="../img/<?php echo $row['img']; ?>" class="w-[100px]" alt=""></td>
+            <td class="flex h-[100%]  justify-center"><img src="../img/<?php echo $row['img']; ?>" class="w-[100px] mt-8" alt="newImage"></td>
             <td>$<?php echo $row['price']; ?></td>
             <td>
-
             <form method="POST" class="w-full">
             <input type="hidden" name="id" value="<?php echo $row['id']; ?>" >
             <input type="submit" class="block bg-red-600 text-white p-3 my-4 rounded-xl text-center w-full" value="Eliminar">

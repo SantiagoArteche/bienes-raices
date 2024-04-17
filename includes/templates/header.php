@@ -1,3 +1,13 @@
+<?php
+  if(!isset($_SESSION)){
+    session_start();
+  }
+
+  $auth = $_SESSION['login'] ?? false;
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -53,7 +63,7 @@
 
           <div class="flex flex-col-reverse items-center sm:items-end">
             <nav
-              class="text-white gap-7 hidden sm:flex-row sm:flex navigation sm:text-[16px] text-2xl"
+              class="text-white gap-7 hidden sm:flex-row sm:flex navigation sm:text-[17px] text-2xl"
             >
               <a href="<?php 
               if($inicio){
@@ -97,7 +107,18 @@
                 }
               ?>" class="hover:text-green-700"
                 >Contacto</a
-              >
+              ><?php if($auth): ?>
+            <a href="<?php 
+                 if($inicio){
+                  echo './src/pages/logout.php';
+                  }else if ($admin){
+                    echo  '../src/pages/logout.php';
+                  }else{
+                   echo '../../src/pages/logout.php';
+                  } ?>"
+             >Cerrar Sesión</a>
+             <?php endif; ?>
+              
             </nav>
             <img
               src="<?php 

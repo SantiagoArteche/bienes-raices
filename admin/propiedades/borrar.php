@@ -1,6 +1,14 @@
 <?php 
 require "../../includes/funciones.php";
+
+$auth = userAuthenticated();
+
+if(!$auth){
+    header('Location: ../index.php');
+}
+
 incluirTemplate('header');
+
 ?>
 
 <main class="flex flex-col gap-5 items-center">

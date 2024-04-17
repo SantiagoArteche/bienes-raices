@@ -648,6 +648,14 @@ video {
   margin-top: 4rem;
 }
 
+.ms-3 {
+  margin-inline-start: 0.75rem;
+}
+
+.ms-2 {
+  margin-inline-start: 0.5rem;
+}
+
 .block {
   display: block;
 }
@@ -680,6 +688,10 @@ video {
   height: 15rem;
 }
 
+.h-\[100\%\] {
+  height: 100%;
+}
+
 .h-\[31rem\] {
   height: 31rem;
 }
@@ -696,8 +708,28 @@ video {
   height: 100%;
 }
 
+.h-\[300px\] {
+  height: 300px;
+}
+
+.max-h-\[300px\] {
+  max-height: 300px;
+}
+
 .min-h-\[25rem\] {
   min-height: 25rem;
+}
+
+.min-h-screen {
+  min-height: 100vh;
+}
+
+.min-h-\[300px\] {
+  min-height: 300px;
+}
+
+.min-h-\[800px\] {
+  min-height: 800px;
 }
 
 .w-10 {
@@ -733,12 +765,20 @@ video {
   width: 100%;
 }
 
+.w-\[900px\] {
+  width: 900px;
+}
+
 .min-w-64 {
   min-width: 16rem;
 }
 
 .min-w-\[400px\] {
   min-width: 400px;
+}
+
+.min-w-\[900px\] {
+  min-width: 900px;
 }
 
 .max-w-\[1600px\] {
@@ -771,6 +811,10 @@ video {
 
 .max-w-full {
   max-width: 100%;
+}
+
+.max-w-\[900px\] {
+  max-width: 900px;
 }
 
 .flex-1 {
@@ -1417,8 +1461,8 @@ video {
     align-items: flex-end;
   }
 
-  .sm\:text-\[16px\] {
-    font-size: 16px;
+  .sm\:text-\[17px\] {
+    font-size: 17px;
   }
 
   .sm\:text-sm {
@@ -1434,6 +1478,14 @@ video {
 @media (min-width: 1024px) {
   .lg\:min-w-\[800px\] {
     min-width: 800px;
+  }
+
+  .lg\:min-w-\[900px\] {
+    min-width: 900px;
+  }
+
+  .lg\:min-w-\[700px\] {
+    min-width: 700px;
   }
 
   .lg\:flex-row {
